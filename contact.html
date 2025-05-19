@@ -15,65 +15,67 @@
    <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <style>
-    :root {
-  --marron-fond: #f5f7fa;               
-  --ocre-clair: #333333;                
-  --taupe-transparent: #f5f7fa; 
-  --texte-marron-fonce: #0a2a4d;                
-}
+<style>
+  :root {
+    --couleur-fond-principale: #f5f7fa;              /* Fond général clair */
+    --couleur-texte-principale: #0a2a4d;             /* Texte principal foncé (bleu nuit) */
+    --couleur-texte-secondaire: #333333;             /* Texte secondaire sombre */
+    --couleur-contour-elements: #c4c8d8;             /* Contours doux pour les éléments */
+    --fond-list-contact:  #c4c8d88e;             /* Contours doux pour les éléments */
+
+  }
+
   body {
-  background-color: var(--marron-fond);
-  font-family: 'Noto Sans', sans-serif;
-  color: var(--texte-marron-fonce);
-}
+    background-color: var(--couleur-fond-principale);
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--couleur-texte-principale);
+  }
 
-.container {
-  width: 100%;
-  max-width: 1300px;
-}
+  .container {
+    width: 100%;
+    max-width: 1300px;
+  }
 
-.icone i {
-  color: var(--ocre-clair);
-  font-size: 1.5rem;
-}
+  .icone i {
+    color: var(--couleur-texte-secondaire);
+    font-size: 1.5rem;
+  }
 
-.titleProfil {
-  font-size: 1.6rem;
-  color: var(--ocre-clair);
-}
-.odreAlpha{
-  color: var(--ocre-clair);
-}
-.listContact {
+  .titleProfil {
+    font-size: 1.6rem;
+    color: var(--couleur-texte-secondaire);
+  }
 
-background-color: #ece9fda1;
+  .odreAlpha {
+    color: var(--couleur-texte-secondaire);
+  }
 
+  .listContact {
+    background: var(--fond-list-contact);
+    border-radius: 1rem;
+    border: 2px solid var(--couleur-texte-principale);
+    color: var(--couleur-texte-principale);
+    padding: 1rem;
+  }
 
+  .listContact img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--couleur-texte-secondaire);
+  }
 
-  border-radius: 1rem;
-  border: 2px solid var(--texte-marron-fonce);
-  color: var(--texte-marron-fonce);
-}
+  .contactName {
+    font-size: 1.2rem;
+    color: var(--couleur-texte-secondaire);
+    font-weight: 500;
+  }
 
-.listContact img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 2px solid var(--ocre-clair);
-}
+  .separateur {
+    border: 1px solid var(--couleur-texte-principale);
+  }
+</style>
 
-.contactName {
-  font-size: 1.2rem;
-  color: var(--ocre-clair);
-  font-weight: 500;
-}
-
-.separateur {
-  border: 1px solid #0a2a4d;
-}
-
-  </style>
 </head>
 
 

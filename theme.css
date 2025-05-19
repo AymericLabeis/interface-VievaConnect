@@ -2,9 +2,13 @@
       background-color: rgb(92, 93, 143);
 
     }
+    .navbar-nav a{
+  font-size: 1.2rem !important;
+    }
     .navbar-toggler {
         background-color: white !important; 
         }
+
     .btnRetour{
     border: 2px solid white
     }
@@ -12,8 +16,17 @@
     border: 2px solid white
     }
     
-    
-
     .fa-arrow-left{
      color: white; 
+    }
+
+     .btn-primary {
+      background-color: rgb(92, 93, 143);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: rgb(92, 93, 143);
+      border: none;
+      
     }

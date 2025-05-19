@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --fond-global: #f5f7fa;
+      --fond-contact: #ffffff;
+      --accent: #0a2a4d;
+      --texte-principal: #333333;
+      
+      --bordure: #e0e0e0;
+    }
+
+    body {
+      background-color: var(--fond-global);
+      font-family: 'Noto Sans', sans-serif;
+      color: var(--texte-principal);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .listContact img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+    }
+
+    .contactName {
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0;
+    }
+    .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .received {
+      background-color: #a0adbd80;
+      align-self: flex-start;
+      border: 1px solid var(--bordure);
+    }
+
+    .sent {
+      background-color: var(--accent);
+      color: white;
+      align-self: flex-end;
+    }
+
+.chat-footer {
+  background-color: var(--fond-contact);
+  border-top: 1px solid var(--bordure);
+}
+
+.plus-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.plus-btn:hover {
+  background-color: #083054;
+}
+
+.chat-input-group {
+  border: 1px solid var(--bordure);
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.chat-input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0.7rem 0.9rem;
+}
+
+.chat-input::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.icons-inside {
+  color: var(--accent);
+  font-size: 1.2rem;
+  padding-right: 1rem;
+}
+
+.send-btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+   width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  background-color: var(--non-lu);
+}
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg px-2">
+    <div class="container-fluid d-flex align-items-center">
+      <!-- Bouton retour -->
+      <a class="btn me-3 btnRetour" href="./menu.html"><i class="fas fa-arrow-left"></i></a>
+
+
+      <!-- Titre actif juste à côté -->
+      <span class="navbar-text text-white fw-semibold fs-5">Accueil</span>
+
+      <!-- Toggle + menu mobile (droite) -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item d-lg-none">
+            <a class="nav-link active text-white" href="./menu.html">Accueil</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link text-white" href="./profil.html">Profil</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link text-white" href="./prametre.html">Paramètre</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link text-white" href="#">Déconnexion</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ <div class="d-flex align-items-center p-2 listContact">
+        <img src="./ressources/photo6.jpg" class="mx-2" alt="">
+        <h3 class="mx-2 mb-0 contactName">Aymeric Labeis</h3>
+      </div>
+  <!-- Conteneur de la conversation -->
+  <div class="chat-container mt-2">
+
+    <!-- Messages reçus -->
+   <!-- Messages reçus -->
+<div class="message received">
+  Salut ! As-tu eu le temps de jeter un œil au document que je t’ai envoyé hier ?
+</div>
+
+<div class="message received">
+  Il faudrait qu’on valide la mise en page avant demain matin. On doit le transmettre au client avant midi.
+</div>
+
+<!-- Message envoyé -->
+<div class="message sent">
+  Oui je viens de l’ouvrir, je te fais un retour dans 10 minutes, je pense qu’il y a juste quelques ajustements à faire.
+</div>
+
+<!-- Message reçu -->
+<div class="message received">
+  Top ! Si tu peux aussi revoir la section "Objectifs", le client avait mentionné qu’il voulait un peu plus de concret.
+</div>
+
+<!-- Message envoyé (plus long) -->
+<div class="message sent">
+  OK, je viens de reformuler cette partie avec les chiffres du dernier trimestre. J’ai aussi ajouté une phrase sur les projections pour Q3, tu me diras si ça passe.
+</div>
+
+<!-- Message reçu -->
+<div class="message received">
+  Super, je viens de relire, c’est beaucoup mieux ! Juste une petite faute de frappe sur "prévisions", sinon c’est nickel.
+</div>
+
+<!-- Message envoyé -->
+<div class="message sent">
+  Corrigé ! Je t’envoie la version finale dans deux minutes. Merci pour ta réactivité 🙌
+</div>
+
+
+  </div>
+
+ <div class="chat-footer d-flex align-items-center gap-3 p-2">
+  <!-- Bouton "+" -->
+  <button class="plus-btn d-flex align-items-center justify-content-center">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <!-- Champ de texte avec icônes -->
+  <div class="input-group chat-input-group flex-grow-1">
+    <input type="text" class="form-control chat-input" placeholder="Écris ton message..." />
+    <span class="input-group-text bg-white border-0 icons-inside">
+      <i class="fas fa-image me-2"></i>
+      <i class="fas fa-microphone"></i>
+    </span>
+  </div>
+
+  <!-- Bouton envoyer -->
+  <button class="send-btn">
+    <i class="fas fa-paper-plane"></i>
+  </button>
+</div>
+
+
+</body>
+</html>

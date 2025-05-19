@@ -1,0 +1,19 @@
+  .navbar{
+      background-color: rgb(92, 93, 143);
+
+    }
+    .navbar-toggler {
+        background-color: white !important; 
+        }
+    .btnRetour{
+    border: 2px solid white
+    }
+    .btnRetour:hover{
+    border: 2px solid white
+    }
+    
+    
+
+    .fa-arrow-left{
+     color: white; 
+    }

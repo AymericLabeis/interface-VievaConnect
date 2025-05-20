@@ -15,79 +15,67 @@
 
   <style>
    
-  :root {
-    --main-color: #5c5d8f;
-    --accent-color: #3b3c5a;
-    --light-color: #f5f7fa;
-    --text-color: #ffffff;
-    --border-color: #2e2f4d;
-  }
+:root {
+  --border-color: #2e2f4d;
+  
+}
 
-  body {
-    background-color: var(--light-color);
-    font-family: 'Inter', sans-serif;
-  }
+/* Corps général */
+body {
+  background-color: #edf0f5;
+  font-family: 'Inter', sans-serif;
+}
 
-  a {
-    text-decoration: none;
-  }
+/* Liens */
+a {
+  text-decoration: none;
+}
 
- 
-
- .containerIcone {
+/* Container des icônes */
+.containerIcone {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
-  
 }
 
-
-  .card {
-  background-color: rgb(80, 105, 134);
-  color: var(--text-color);
-  border: 2px solid var(--border-color);
+/* Style de base des cartes */
+.card {
   border-radius: 12px;
+  border: 2px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
- margin: 1rem;
-
+  margin: 1rem;
   width: 150px;
-  
+  color: beige;
 }
 
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
 
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
+.card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 
-  .card-body {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    padding: 1rem;
-  }
+.card-body i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-  .card-body i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
+/* Couleurs personnalisées */
+.card-contact    { background-color: rgb(50,162,121); }
+.card-messages   { background-color: rgb(102,149,189); }
+.card-video      { background-color: rgb(142,113,159); }
+.card-agenda     { background-color: rgb(235,158,95); }
+.card-tv         { background-color: rgb(206,66,52); }
+.card-help       { background-color: rgb(205,123,135); }
 
-  .card-title {
-    font-size: 1.1rem;
-    color: #d1d2f1;
-    margin: 0;
-  }
-
-
-
-   
-
-    
   </style>
 </head>
 <body>
@@ -130,58 +118,59 @@
   <div class="container mt-3 containerIcone">
    
       <a href="./contact.html">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-user"></i>
-            <div class="card-title">Contact</div>
-          </div>
-        </div>
-      </a>
+  <div class="card card-contact">
+    <div class="card-body">
+      <i class="fas fa-user"></i>
+      <div class="card-title">Contact</div>
+    </div>
+  </div>
+</a>
 
-      <a href="./messages.html">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-envelope"></i>
-            <div class="card-title">Messages</div>
-          </div>
-        </div>
-      </a>
+<a href="./messages.html">
+  <div class="card card-messages">
+    <div class="card-body">
+      <i class="fas fa-envelope"></i>
+      <div class="card-title">Messages</div>
+    </div>
+  </div>
+</a>
 
-      <a href="#">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-video"></i>
-            <div class="card-title">Appel vidéo</div>
-          </div>
-        </div>
-      </a>
+<a href="./videoCall.html">
+  <div class="card card-video">
+    <div class="card-body">
+      <i class="fas fa-video"></i>
+      <div class="card-title">Appel vidéo</div>
+    </div>
+  </div>
+</a>
 
-      <a href="#">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-calendar-alt"></i>
-            <div class="card-title">Agenda</div>
-          </div>
-        </div>
-      </a>
+<a href="./agenda.html">
+  <div class="card card-agenda">
+    <div class="card-body">
+      <i class="fas fa-calendar-alt"></i>
+      <div class="card-title">Agenda</div>
+    </div>
+  </div>
+</a>
 
-      <a href="#">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-tv"></i>
-            <div class="card-title">TV Broadcast</div>
-          </div>
-        </div>
-      </a>
+<a href="#">
+  <div class="card card-tv">
+    <div class="card-body">
+      <i class="fas fa-tv"></i>
+      <div class="card-title">TV Broadcast</div>
+    </div>
+  </div>
+</a>
 
-      <a href="#">
-        <div class="card">
-          <div class="card-body">
-            <i class="fas fa-question-circle"></i>
-            <div class="card-title">Aide</div>
-          </div>
-        </div>
-      </a>
+<a href="#">
+  <div class="card card-help">
+    <div class="card-body">
+      <i class="fas fa-question-circle"></i>
+      <div class="card-title">Aide</div>
+    </div>
+  </div>
+</a>
+
     
   </div>
 </body>

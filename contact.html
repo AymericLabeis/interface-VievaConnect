@@ -17,67 +17,94 @@
 
 <style>
   :root {
-    --couleur-fond-principale: #f5f7fa;              /* Fond général clair */
-    --couleur-texte-principale: #0a2a4d;             /* Texte principal foncé (bleu nuit) */
-    --couleur-texte-secondaire: #333333;             /* Texte secondaire sombre */
-    --couleur-contour-elements: #c4c8d8;             /* Contours doux pour les éléments */
-    --fond-list-contact:  #c4c8d88e;             /* Contours doux pour les éléments */
-
+    --couleur-fond-principale: #f5f7fa;              
+    --couleur-texte-principale: #0a2a4d; 
+    --couleur-texte-contact: #02162c;              
+    --couleur-contour-elements: #c4c8d8;           
+    --fond-list-contact: #32a279d0;                    
+    --contraste-violet: #8a6bbd;                     
   }
-
   body {
     background-color: var(--couleur-fond-principale);
     font-family: 'Noto Sans', sans-serif;
-    color: var(--couleur-texte-principale);
   }
-
   .container {
     width: 100%;
     max-width: 1300px;
   }
 
   .icone i {
-    color: var(--couleur-texte-secondaire);
+    color: var(--couleur-texte-principale);
     font-size: 1.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .icone i:hover {
+    
   }
 
   .titleProfil {
     font-size: 1.6rem;
-    color: var(--couleur-texte-secondaire);
+    color: var(--couleur-texte-principale);
+    font-weight: 600;
   }
 
   .odreAlpha {
-    color: var(--couleur-texte-secondaire);
+    color: var(--couleur-texte-principale);
+    font-size: 0.95rem;
   }
 
   .listContact {
     background: var(--fond-list-contact);
     border-radius: 1rem;
-    border: 2px solid var(--couleur-texte-principale);
-    color: var(--couleur-texte-principale);
+    
+    
     padding: 1rem;
+    transition: background 0.2s ease-in-out;
+  }
+
+  .listContact:hover {
+    
   }
 
   .listContact img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 2px solid var(--couleur-texte-secondaire);
+    border: 2px solid var(--couleur-texte-principale);
   }
 
   .contactName {
     font-size: 1.2rem;
-    color: var(--couleur-texte-secondaire);
+    color: var(--couleur-texte-contact) !important;
     font-weight: 500;
   }
 
   .separateur {
-    border: 1px solid var(--couleur-texte-principale);
+    
+  border: none;                /* Retire le style par défaut */
+  height: 2px;                 /* Épaisseur visible */
+  background-color: #0a2a4d;   /* Couleur vive et foncée */
+             /* Espacement vertical */
+  border-radius: 2px;          /* Bords légèrement arrondis (optionnel) */
+}
+
+  /* Exemple de bouton ou lien stylisé */
+  .btn-accent {
+    background-color: var(--accent-turquoise);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn-accent:hover {
+    background-color: var(--bouton-orange);
   }
 </style>
-
 </head>
-
 
 <body>
     
@@ -115,7 +142,8 @@
       </div>
     </div>
   </nav>
-  <div class="container mt-4">
+
+  <div class="container mt-3">
     <!-- Menu de navigation -->
     <div class="d-flex justify-content-end mt-3 mx-3 icone">
       <i class="fa-solid fa-magnifying-glass p-2"></i>
@@ -132,8 +160,6 @@
       </div>
       <hr class="separateur">
     </section>
-    
-
     <!-- Liste des contacts -->
     <section class="mb-3 m-1">
       <h3 class=" fs-6 odreAlpha">a</h3>

@@ -69,12 +69,86 @@ a {
 }
 
 /* Couleurs personnalisées */
-.card-contact    { background-color: rgb(50,162,121); }
-.card-messages   { background-color: rgb(102,149,189); }
-.card-video      { background-color: rgb(142,113,159); }
-.card-agenda     { background-color: rgb(235,158,95); }
-.card-tv         { background-color: rgb(206,66,52); }
-.card-help       { background-color: rgb(205,123,135); }
+.card-contact  { background-color: rgb(89, 176, 152); }
+.card-messages { background-color: rgb(128, 147, 182); }
+.card-video    { background-color: rgb(140, 114, 158); }
+.card-agenda   { background-color: rgb(204, 154, 125); }
+.card-tv       { background-color: rgb(191, 103, 95); }
+.card-help     { background-color: rgb(196, 136, 143); }
+
+
+/* === MODAL STYLES === */
+
+.tv-modal-content {
+  background-color: #1E293B; /* ardoise foncé */
+  color: #F8FAFC;
+  border-radius: 12px;
+}
+
+.modal-title {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #F8FAFC;
+}
+
+.modal-subtitle {
+  color: #d8dee7;
+  font-size: 1rem;
+}
+
+.device-list {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.device-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  color: #F1F5F9;
+  background-color: #334155;
+  transition: background-color 0.3s ease;
+}
+
+.device-item:hover {
+  background-color: #475569;
+}
+
+.btn-caster {
+  background-color: #4ADE80;
+  color: #1E293B;
+  border-radius: 25px;
+  padding: 0.35rem 1.4rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-caster:hover {
+  background-color: #22C55E;
+}
+
+.btn-stop-cast {
+  background-color: rgb(184, 25, 11); 
+  color: #fff;
+  font-weight: 700;
+  border-radius: 1rem;
+  width: 100%;
+  border: none;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 6px 12px rgba(114, 5, 5, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-stop-cast:hover {
+ background-color: rgb(88, 12, 5); 
+}
 
   </style>
 </head>
@@ -104,7 +178,10 @@ a {
             <a class="nav-link text-white" href="./profil.html">Profil</a>
           </li>
           <li class="nav-item d-lg-none">
-            <a class="nav-link text-white" href="./prametre.html">Paramètre</a>
+            <a class="nav-link text-white" href="./parametre.html">Paramètre</a>
+          </li>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link text-white" href="./supporTechnique.html">Support technique</a>
           </li>
           <li class="nav-item d-lg-none">
             <a class="nav-link text-white" href="#">Déconnexion</a>
@@ -153,10 +230,10 @@ a {
   </div>
 </a>
 
-<a href="#">
-  <div class="card card-tv">
+<a href="#" data-bs-toggle="modal" data-bs-target="#tvModal">
+  <div class="card card-tv text-center">
     <div class="card-body">
-      <i class="fas fa-tv"></i>
+      <i class="fas fa-tv fa-2x"></i>
       <div class="card-title">TV Broadcast</div>
     </div>
   </div>
@@ -173,5 +250,36 @@ a {
 
     
   </div>
+
+<div class="modal fade" id="tvModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content tv-modal-content text-center p-4">
+
+      <h2 class="modal-title mb-4">
+        <i class="fas fa-tv fa-lg me-2"></i> Caster vers une TV
+      </h2>
+
+      <p class="modal-subtitle mb-4">
+        Sélectionnez un appareil pour commencer la diffusion :
+      </p>
+
+      <ul class="list-group device-list mb-4">
+        <li class="list-group-item device-item">
+          Living Room TV
+          <button class="btn btn-caster btn-sm">Caster</button>
+        </li>
+        <li class="list-group-item device-item">
+          Samsung QLED
+          <button class="btn btn-caster btn-sm">Caster</button>
+        </li>
+      </ul>
+
+      <button class="btn btn-stop-cast btn-lg">Arrêter la diffusion</button>
+
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>

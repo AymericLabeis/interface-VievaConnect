@@ -22,11 +22,12 @@
 
      .btn-primary {
       background-color: rgb(92, 93, 143);
+      background-color: rgb(42, 42, 42);
       border: none;
     }
 
     .btn-primary:hover {
-      background-color: rgb(92, 93, 143);
+      background-color: rgb(50, 70, 90);
       border: none;
       
     }

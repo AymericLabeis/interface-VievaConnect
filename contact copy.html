@@ -7,112 +7,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 
 
- <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <!-- Bootstrap JS -->
-   <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="theme.css">
+   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
-:root {
-  --couleur-fond-principale: #1C242B;          /* bleu très foncé / presque noir */
-  --couleur-texte-principale: #E8F0F2;         /* blanc cassé, clair */
-  --couleur-texte-contact: #DDE7E9;             /* texte clair, doux */
-  --couleur-contour-elements: #52727C59;       /* bleu-vert translucide pour bordure */
-  --fond-list-contact: #2F3E46;                 /* bleu foncé moyen pour liste */
-  --fond-list-contact-hover: #506875;         /* vert menthe translucide hover */
-  --contact-border: #7D9CA9;                     /* bordure bleu gris */
-  --contact-img-border: #7dadbb;                 /* bordure image bleu clair */
-  --contraste-violet: #8a6bbd;                   /* violet doux */
+  :root {
+    --couleur-fond-principale: #f5f7fa;              
+    --couleur-texte-principale: #0a2a4d; 
+    --couleur-texte-contact: #02162c;              
+    --couleur-contour-elements: #c4c8d8;           
+    --fond-list-contact: #32a279d0;                    
+    --contraste-violet: #8a6bbd;                     
+  }
+  body {
+    background-color: var(--couleur-fond-principale);
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .container {
+    width: 100%;
+    max-width: 1300px;
+  }
+
+  .icone i {
+    color: var(--couleur-texte-principale);
+    font-size: 1.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .icone i:hover {
+    color: var(--couleur-texte-principale);
+  }
+
+  .titleProfil {
+    font-size: 1.6rem;
+    color: var(--couleur-texte-principale);
+    font-weight: 600;
+  }
+
+  .odreAlpha {
+    color: var(--couleur-texte-principale);
+    font-size: 0.95rem;
+  }
+
+  .listContact {
+    background: #2F3E46;
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: background 0.2s ease-in-out;
+    border:2px solid #52727c36;
+  }
+
+  .listContact:hover {
+    background: var(--fond-list-contact);
+  }
+
+  .listContact img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #7dadbb;;
+  }
+
+  .contactName {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .separateur {
+    
+  border: none;               
+  height: 2px;                 
+  background-color: #0a2a4d; 
+  border-radius: 2px;         
 }
 
-body {
-  background-color: var(--couleur-fond-principale);
-  font-family: 'Noto Sans', sans-serif;
-  color: var(--couleur-texte-principale);
-  min-height: 100vh;
-}
+  /* Exemple de bouton ou lien stylisé */
+  .btn-accent {
+    background-color: var(--accent-turquoise);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
 
-.container {
-  width: 100%;
-  max-width: 1300px;
-}
-
-.icone i {
-  color: var(--couleur-texte-principale);
-  font-size: 1.5rem;
-  transition: color 0.2s ease-in-out;
-}
-
-.icone i:hover {
-  color: var(--couleur-texte-principale);
-}
-
-.titleProfil {
-  font-size: 1.6rem;
-  color: var(--couleur-texte-principale);
-  font-weight: 600;
-}
-
-.odreAlpha {
-  color: var(--couleur-texte-principale);
-  font-size: 0.95rem;
-}
-
-.listContact {
-  background-color: var(--fond-list-contact);
-  border-radius: 1rem;
-  padding: 1rem;
-  border: 2px solid var(--couleur-contour-elements);
-  transition: background-color 0.3s ease;
-  color: var(--couleur-texte-contact);
-  display: flex;
-  align-items: center;
-}
-
-.listContact:hover {
-  background-color: var(--fond-list-contact-hover);
-  color: var(--couleur-texte-principale);
-}
-
-.listContact img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 2px solid var(--contact-img-border);
-}
-
-.contactName {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: inherit; /* hérite de la couleur parente pour cohérence */
-  margin-left: 0.5rem;
-}
-
-.separateur {
-  border: none;
-  height: 2px;
-  background-color: var(--couleur-texte-principale);
-  border-radius: 2px;
-  margin: 1rem 0;
-}
-
-/* Exemple de bouton ou lien stylisé */
-.btn-accent {
-  background-color: var(--contraste-violet);
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.btn-accent:hover {
-  background-color: #6a54a3; /* violet plus foncé au hover */
-}
-
+  .btn-accent:hover {
+    background-color: var(--bouton-orange);
+  }
 </style>
 </head>
 
@@ -143,10 +131,7 @@ body {
             <a class="nav-link text-white" href="./profil.html">Profil</a>
           </li>
           <li class="nav-item d-lg-none">
-            <a class="nav-link text-white" href="./parametre.html">Paramètre</a>
-          </li>
-          <li class="nav-item d-lg-none">
-            <a class="nav-link text-white" href="./supporTechnique.html">Support technique</a>
+            <a class="nav-link text-white" href="./prametre.html">Paramètre</a>
           </li>
           <li class="nav-item d-lg-none">
             <a class="nav-link text-white" href="#">Déconnexion</a>

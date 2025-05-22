@@ -1,5 +1,6 @@
   .navbar{
       background-color: rgb(92, 93, 143);
+      background-color: #37445a;
 
     }
     .navbar-nav a{
@@ -25,11 +26,13 @@
       background-color: rgb(42, 42, 42);
       background-color: rgb(50, 70, 90);
       background-color: rgb(52, 112, 76);
+      background-color: #40C4FF;
+      background-color: #FF5252;
       border: none;
     }
 
     .btn-primary:hover {
-      background-color: rgb(50, 70, 90);
+      background-color: #FF5252;;
       border: none;
       
     }

@@ -109,8 +109,8 @@ a {
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.75rem 1rem;
-  color: #F1F5F9;
-  background-color: #334155;
+  color: #ffffff;
+  background-color: #c5c4e648;
   transition: background-color 0.3s ease;
 }
 
@@ -119,12 +119,13 @@ a {
 }
 
 .btn-caster {
-  background-color: #4ADE80;
-  color: #1E293B;
-  border-radius: 25px;
+  background-color: #1E293B;;
+  color: #ffffff;
+  border-radius: 10px;
+  
   padding: 0.35rem 1.4rem;
   font-weight: 700;
-  border: none;
+ 
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -147,9 +148,36 @@ a {
 }
 
 .btn-stop-cast:hover {
- background-color: rgb(88, 12, 5); 
+ background-color: rgb(117, 17, 8); 
 }
 
+  .loading-spinner {
+      width: 3rem;
+      height: 3rem;
+      border-width: 0.4em;
+    }
+      .fade-in {
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+  .contact-item {
+    background-color: #475f7c;
+    color: #f1f1f1;
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   </style>
 </head>
 <body>
@@ -239,7 +267,7 @@ a {
   </div>
 </a>
 
-<a href="#">
+<a href="#" data-bs-toggle="modal" data-bs-target="#confirmModal">
   <div class="card card-help">
     <div class="card-body">
       <i class="fas fa-question-circle"></i>
@@ -280,6 +308,100 @@ a {
   </div>
 </div>
 
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #2c2c2c; border-radius: 1rem; box-shadow: 0 0 25px rgba(0,0,0,0.6); border: none;">
+      
+      <div class="modal-header" style="background-color: #d65a31; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+        <h5 class="modal-title text-white fw-bold" id="confirmModalLabel">Confirmation</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+
+      <div class="modal-body text-light fs-5 px-4 py-3">
+        Êtes-vous sûr de vouloir lancer une recherche de contacts d'urgence ?
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between px-4 pb-3">
+        <button type="button" class="btn btn-danger btn-lg fw-semibold px-4" data-bs-dismiss="modal" style="border-radius: 0.75rem;">
+          Annuler
+        </button>
+        <button type="button" class="btn btn-warning btn-lg fw-semibold px-4" id="confirmActionBtn" style="border-radius: 0.75rem;">
+          Oui, confirmer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal de chargement -->
+<div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light text-center p-4 rounded-4">
+      <div class="modal-body">
+        <div class="spinner-border text-warning loading-spinner mb-3" role="status" id="spinner"></div>
+        <p class="fs-5 mb-4">Recherche de contact d'urgence en cours...</p>
+
+        <!-- Liste de contacts masquée au départ -->
+        <div id="contactResults" class="d-none fade-in mt-3">
+          <div class="list-group text-start mb-3">
+            <div class="list-group-item border-0 d-flex align-items-center contact-item">
+              <i class="fas fa-user-circle me-3 fs-4 text-warning"></i>
+              <div>
+                <strong>Marie Dupont</strong><br />
+                Fille - 06 12 34 56 78
+              </div>
+            </div>
+            <div class="list-group-item border-0 d-flex align-items-center contact-item">
+              <i class="fas fa-user-circle me-3 fs-4 text-warning"></i>
+              <div>
+                <strong>Dr. Alain Morel</strong><br />
+                Médecin traitant - 01 45 67 89 00
+              </div>
+            </div>
+            <div class="list-group-item border-0 d-flex align-items-center contact-item">
+              <i class="fas fa-user-circle me-3 fs-4 text-warning"></i>
+              <div>
+                <strong>Jean Martin</strong><br />
+                Voisin - 06 98 76 54 32
+              </div>
+            </div>
+          </div>
+
+          <!-- Bouton Alerter -->
+          <button class="btn btn-danger btn-lg w-100 fw-semibold" id="alertBtn">
+            Alerter les contacts
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Simule un chargement de 3 secondes
+  document.addEventListener('DOMContentLoaded', () => {
+    const confirmBtn = document.getElementById('confirmActionBtn');
+    const contactResults = document.getElementById('contactResults');
+    const spinner = document.getElementById('spinner');
+
+    confirmBtn.addEventListener('click', () => {
+      // Masquer la première modal et afficher celle de chargement
+      const confirmModal = bootstrap.Modal.getInstance(document.getElementById('confirmModal'));
+      confirmModal.hide();
+
+      const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+      loadingModal.show();
+
+      // Attendre 3 secondes avant d'afficher les contacts
+      setTimeout(() => {
+        spinner.classList.add('d-none');
+        contactResults.classList.remove('d-none');
+      }, 3000);
+    });
+  });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palette – Application Séniors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F2E9E4;
+      margin: 0;
+      padding: 2rem;
+      color: #22223B;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .color-block {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .color-sample {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .color-info {
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    .label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .hex {
+      font-family: monospace;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="palette">
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #4A4E69;">#4A4E69</div>
+      <div class="color-info">
+        <div class="label">Couleur principale (UI)</div>
+        <div class="hex">#4A4E69</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #9A8C98;">#9A8C98</div>
+      <div class="color-info">
+        <div class="label">Couleur secondaire</div>
+        <div class="hex">#9A8C98</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #F2E9E4; color: #22223B;">#F2E9E4</div>
+      <div class="color-info">
+        <div class="label">Fond principal</div>
+        <div class="hex">#F2E9E4</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #EDEDED; color: #22223B;">#EDEDED</div>
+      <div class="color-info">
+        <div class="label">Fond secondaire</div>
+        <div class="hex">#EDEDED</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #22223B;">#22223B</div>
+      <div class="color-info">
+        <div class="label">Texte principal</div>
+        <div class="hex">#22223B</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #6D6875;">#6D6875</div>
+      <div class="color-info">
+        <div class="label">Texte secondaire</div>
+        <div class="hex">#6D6875</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #D7263D;">#D7263D</div>
+      <div class="color-info">
+        <div class="label">Bouton Urgence</div>
+        <div class="hex">#D7263D</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #3FA34D;">#3FA34D</div>
+      <div class="color-info">
+        <div class="label">Succès</div>
+        <div class="hex">#3FA34D</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #3C6E71;">#3C6E71</div>
+      <div class="color-info">
+        <div class="label">Accent / Action</div>
+        <div class="hex">#3C6E71</div>
+      </div>
+    </div>
+
+    <div class="color-block">
+      <div class="color-sample" style="background-color: #FFB627; color: #22223B;">#FFB627</div>
+      <div class="color-info">
+        <div class="label">Alerte douce</div>
+        <div class="hex">#FFB627</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

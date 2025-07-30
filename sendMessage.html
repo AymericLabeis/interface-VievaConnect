@@ -15,135 +15,155 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
-    :root {
-      --fond-global: #f5f7fa;
-      --fond-contact: #ffffff;
-      --accent: #37445a;
-      --texte-principal: #333333;
-      
-      --bordure: #e0e0e0;
-    }
-
-    body {
-      background-color: var(--fond-global);
-      font-family: 'Noto Sans', sans-serif;
-      color: var(--texte-principal);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .listContact img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-    }
-
-    .contactName {
-      font-size: 1.1rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin: 0;
-    }
-    .chat-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      overflow-y: auto;
-    }
-
-    .message {
-      max-width: 75%;
-      padding: 0.75rem 1rem;
-      border-radius: 1rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .received {
-      background-color: #a0adbd80;
-      align-self: flex-start;
-      border: 1px solid var(--bordure);
-    }
-
-    .sent {
-       background-color: #37445a;;
-      color: white;
-      align-self: flex-end;
-    }
-
-.chat-footer {
-  background-color: var(--fond-contact);
-  border-top: 1px solid var(--bordure);
+:root {
+  --fond-global: #f3f1f9;
+  --fond-contact: #ffffff;
+  --accent: #502A83;
+  --accent-clair: #6C6ECE;
+  --texte-principal: #2D2D2D;
+  --texte-inverse: #F8F6FD;
+  --bordure: #d8d3e4;
+  --fond-footer: #e8e4f0;
+  --fond-contactlist: #f0ebf9;
 }
 
-.plus-btn {
+body {
+  background-color: rgb(204, 201, 224);
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--texte-principal);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
   background-color: var(--accent);
   color: white;
-  border: none;
+}
+
+.btnRetour {
+  color: white;
+}
+
+.listContact {
+  background-color: #f9f9f9e0;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.listContact img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  font-size: 1rem;
-  transition: background-color 0.2s ease;
-  flex-shrink: 0;
 }
 
-.plus-btn:hover {
-  background-color: #083054;
+.contactName {
+  font-size: 1.1rem;
+  color: #37445a;
+  font-weight: 500;
+  margin: 0;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.received {
+  background-color: #fdfdfd;
+  align-self: flex-start;
+  color: var(--texte-principal);
+}
+
+.sent {
+    background-color: #502A83;
+  color: var(--texte-inverse);
+  align-self: flex-end;
+}
+
+.chat-footer {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 16px 18px;
+  border-top: 1px solid var(--bordure);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .chat-input-group {
-  border: 1px solid var(--bordure);
+  display: flex;
+  align-items: center;
+  
+  border: 2px solid #3d2168;
   border-radius: 2rem;
-  overflow: hidden;
-  background-color: white;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(80, 42, 131, 0.1);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.chat-input-group:focus-within {
+  border-color: var(--accent);
 }
 
 .chat-input {
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 0.7rem 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  flex: 1;
 }
 
 .chat-input::placeholder {
   color: #999;
-  font-size: 0.9rem;
 }
 
 .icons-inside {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
   color: var(--accent);
-  font-size: 1.2rem;
-  padding-right: 1rem;
+  padding-right: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .send-btn {
   background-color: var(--accent);
   color: white;
   border: none;
-   width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease;
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(80, 42, 131, 0.3);
 }
 
 .send-btn:hover {
-  background-color: var(--non-lu);
+  background-color: #3d2168;
 }
 
+</style>
 
-  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg px-2">
+ <nav class="navbar navbar-expand-lg px-2">
     <div class="container-fluid d-flex align-items-center">
       <!-- Bouton retour -->
       <a class="btn me-3 btnRetour" href="./menu.html"><i class="fas fa-arrow-left"></i></a>
@@ -177,17 +197,13 @@
     </div>
   </nav>
  <div class="d-flex align-items-center p-2 listContact">
-        <img src="./ressources/photo6.jpg" class="mx-2" alt="">
-        <h3 class="mx-2 mb-0 contactName">Aymeric Labeis</h3>
+        <img src="./ressources/userIcone2.png" class="mx-2" alt="">
+        <h3 class="mx-2 mb-0 contactName">Sophie</h3>
       </div>
   <!-- Conteneur de la conversation -->
   <div class="chat-container mt-1">
 
     <!-- Messages reçus -->
-   <!-- Messages reçus -->
-<div class="message received">
-  Salut ! As-tu eu le temps de jeter un œil au document que je t’ai envoyé hier ?
-</div>
 
 <div class="message received">
   Il faudrait qu’on valide la mise en page avant demain matin. On doit le transmettre au client avant midi.
@@ -211,16 +227,13 @@
 
   </div>
 
- <div class="chat-footer d-flex align-items-center gap-3 p-2">
-  <!-- Bouton "+" -->
-  <button class="plus-btn d-flex align-items-center justify-content-center">
-    <i class="fas fa-plus"></i>
-  </button>
+ <div class="chat-footer d-flex align-items-center gap-3">
+ 
 
   <!-- Champ de texte avec icônes -->
   <div class="input-group chat-input-group flex-grow-1">
     <input type="text" class="form-control chat-input" placeholder="Écris ton message..." />
-    <span class="input-group-text bg-white border-0 icons-inside">
+    <span class="input-group-text  border-0 icons-inside">
       <i class="fas fa-image me-2"></i>
       <i class="fas fa-microphone"></i>
     </span>

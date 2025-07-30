@@ -14,17 +14,14 @@
 
   <style>
     body {
-      background-color: #CCC9E0;
+      background-color: #121212;
       color: #f1f1f1;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
     }
-    .btn-primary{
-       background-color: #502A83;
-       border-radius: 10px;
-    }
+
     .param-container {
-      max-width: 900px;
+      max-width: 600px;
       margin: auto;
       padding: 2rem 1rem;
     }
@@ -33,11 +30,11 @@
       font-size: 1.6rem;
       font-weight: 600;
       margin-bottom: 2rem;
-      color: #37445A;
+      color: #ffffff;
     }
 
     .param-item {
-      background-color: #FFFFFF;
+      background-color: #1e1e1e;
       border-radius: 12px;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -50,47 +47,28 @@
     .param-item i {
       font-size: 1.2rem;
       margin-right: 0.75rem;
-      color: #502A83;
+      color: #ffc107;
     }
 
     .param-label {
       font-weight: 500;
-      color: #37445A;
+      color: #f1f1f1;
     }
 
     .form-check-input:checked {
-      background-color: #502A83;
-      border-color: #502A83;
-    }
-    .form-select{
-      background-color:#502A83 ;
-      color:#fff;
+      background-color: #ffc107;
+      border-color: #ffc107;
     }
 
     .divider {
       height: 1px;
-      background-color: #ffffff;
+      background-color: #333;
       margin: 2rem 0;
     }
 
     .volume-slider {
       width: 100%;
     }
-    .custom-select-white-arrow {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #502A83;
-  color: white;
-  padding-right: 2.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg fill='white' height='14' viewBox='0 0 20 20' width='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.516 7.548l4.492 4.492 4.492-4.492 1.408 1.408-5.9 5.9-5.9-5.9z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 14px;
-}
-
-
-
   </style>
 </head>
 <body>
@@ -129,8 +107,11 @@
   </nav>
 
   <div class="container param-container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="param-header"><i class="fas fa-sliders-h me-2"></i>Paramètres</h2>
+    </div>
 
-    
+    <!-- Paramètre 1 : Localisation d'urgence -->
     <div class="param-item">
       <div class="d-flex align-items-center">
         <i class="fas fa-map-marker-alt"></i>
@@ -141,7 +122,7 @@
       </div>
     </div>
 
-   
+    <!-- Paramètre 5 : Notifications d'appel -->
     <div class="param-item">
       <div class="d-flex align-items-center">
         <i class="fas fa-phone-volume"></i>
@@ -152,29 +133,37 @@
       </div>
     </div>
 
-    <div class="param-item">
+    
+
+<!-- Paramètre : Appareils connectés -->
+<!-- Paramètre : Appareils connectés -->
+<div class="param-item d-flex justify-content-between align-items-center">
   <div class="d-flex align-items-center">
-    <i class="fab fa-google"></i>
-    <span class="param-label">Connexion à Google Calendar</span>
+    <i class="fas fa-tv me-2"></i>
+    <span class="param-label">Appareils connectés</span>
   </div>
-  <button class="btn btn-sm btn-primary ms-3" onclick="connectToGoogleCalendar()">
-    Se connecter
+  <button class="btn btn-sm btn-outline-warning">
+    <i class="fas fa-cog me-1"></i> Gérer
   </button>
 </div>
 
 
 
+
+    <!-- Paramètre 4 : Taille du texte -->
     <div class="param-item">
       <div class="d-flex align-items-center">
         <i class="fas fa-text-height"></i>
         <span class="param-label">Taille du texte</span>
       </div>
-      <select class="form-select form-select-sm text-light border-0 w-auto custom-select-white-arrow">
+      <select class="form-select form-select-sm bg-dark text-light border-0 w-auto">
         <option>Normale</option>
         <option>Grande</option>
         <option>Très grande</option>
       </select>
     </div>
+
+    
 
   </div>
 
